@@ -1,0 +1,57 @@
+             GDL Workbench - IDE for GNU Data Language
+             =========================================
+
+An IDE for GDL (GNU Data Language). GDL is a free IDL (Interactive Data Language)
+compatible incremental compiler (capable of running programs written in IDL/GDL).
+IDL is a registered trademark of ITT Visual Information Solutions 
+(see: http://www.ittvis.com).
+
+
+HOMEPAGE:
+=========
+
+http://gnudatalanguage.sourceforge.net
+
+
+FEATURES:
+=========
+
+Basic IDE functionality (Projects Explorer, Console, Wizards, etc.) thanks to Eclipse RCP
+GDL integrated console / command line support
+Compile / Run script from menu and toolbar
+Syntax coloring
+
+
+COMPILE:
+========
+
+With the latest JDK (Java Development Kit, http://openjdk.java.net) installed,
+Type the following at the top source directory:
+
+POSIX:
+
+$ sh gradlew build
+
+Windows:
+
+> gradlew.bat build
+
+Then the compiled binaries will be generated at gdlde/build/output.
+Be aware that if you execute wrong platform's one (e.g. running x86 IDE in x86-64 environment),
+then the IDE won't run properly.
+
+
+LICENSE:
+========
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+
+(It should be included in this package in the file COPYING)
