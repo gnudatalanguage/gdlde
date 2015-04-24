@@ -15,11 +15,11 @@ public class GDLCommunicatorSingleton {
 
     private void startGDL() {
         try {
-            String gdl_home = System.getenv().get("GDL_HOME"); // Defined on Windows Only
+            String gdl_home = System.getenv().get("GDL_HOME"); // May be defined on Windows Only
             if (gdl_home == null) gdl_home = "gdl";
             else {
                 if (gdl_home.startsWith("+")) gdl_home = gdl_home.substring(1);
-                gdl_home += File.separator + "gdl";
+                gdl_home += File.separator + "bin" + File.separator + "gdl";
             }
             pb = new ProcessBuilder(gdl_home, "-gdlde").redirectErrorStream(true);
             process = pb.start();
