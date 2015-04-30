@@ -1,7 +1,6 @@
 package gdlde;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;
@@ -39,15 +38,15 @@ public class GDLEditor extends TextEditor
         setSourceViewerConfiguration(new GDLSourceViewerConfiguration());
     }
 
-    protected IPath getInputFilePath(){
-        IPath path = null;
+    protected String getInputFilePath(){
+        String path = "";
         if (this.input instanceof IFileEditorInput) {
             final IFileEditorInput ife = (IFileEditorInput)this.input;
-            path = ife.getFile().getFullPath();
+            path = Path.fromOSString(ife.getFile().getRawLocationURI().getPath()).toString();
         }
         else if (this.input instanceof FileStoreEditorInput) {
             final FileStoreEditorInput fsei = (FileStoreEditorInput)this.input;
-            path = Path.fromOSString(fsei.getURI().getPath());
+            path = Path.fromOSString(fsei.getURI().getPath()).toString();
         }
         return path;
     }

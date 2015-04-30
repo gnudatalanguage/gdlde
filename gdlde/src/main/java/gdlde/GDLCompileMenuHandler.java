@@ -12,10 +12,10 @@ public class GDLCompileMenuHandler extends AbstractHandler {
         try {
             IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
             GDLEditor ed = (GDLEditor)activePage.getActiveEditor();
-            String name = ed.getInputFilePath().toString();
-
-            GDLCommunicatorSingleton comm = GDLCommunicatorSingleton.getInstance();
-            comm.IssueCommand(".compile " + name, false);
+            if (!ed.isDirty() || activePage.saveEditor(ed, false)) {
+                GDLCommunicatorSingleton comm = GDLCommunicatorSingleton.getInstance();
+                comm.IssueCommand(".compile " + ed.getInputFilePath(), false);
+            }
         } catch (NullPointerException e) {
             // Not found open file. Do nothing.
             e.printStackTrace();
