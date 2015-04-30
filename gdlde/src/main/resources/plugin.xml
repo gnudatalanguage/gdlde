@@ -36,7 +36,8 @@
         </perspectiveExtension>
     </extension>
     <extension  point="org.eclipse.ui.editors">
-        <editor id="GDLEditor" extensions="pro" name="GDL Editor" class="gdlde.GDLEditor" />
+        <editor id="GDLEditor" extensions="pro" name="GDL Editor" class="gdlde.GDLEditor"
+                 contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor" />
     </extension>
     <extension point="org.eclipse.ui.newWizards">
         <wizard name="New GDL Project" class="gdlde.GDLProjectWizard" id="GDLProjectWizard" />
