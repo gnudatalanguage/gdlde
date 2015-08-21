@@ -168,7 +168,11 @@ public class GDLCodeScanner extends RuleBasedScanner
         // Add procedures/functions list from GDL_PATH
         if (!foundlibs)
         {
-            findlibs(System.getenv().get("GDL_PATH"));
+            String gdl_path =  System.getenv().get("GDL_PATH");
+            if (gdl_path == null) {
+                gdl_path = "/usr/local/share/gnudatalanguage/lib";
+            }
+            findlibs(gdl_path);
             foundlibs = true;
         }
 
