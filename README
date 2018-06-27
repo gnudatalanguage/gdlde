@@ -30,7 +30,7 @@ Type the following at the top source directory:
 
 POSIX:
 
-$ sh gradlew build
+$ bash gradlew build
 
 Windows:
 
