@@ -16,29 +16,23 @@ http://gnudatalanguage.sourceforge.net
 FEATURES:
 =========
 
-Basic IDE functionality (Projects Explorer, Console, Wizards, etc.) thanks to Eclipse RCP
-GDL integrated console / command line support
-Compile / Run script from menu and toolbar
-Syntax coloring
+- Basic IDE functionality (Projects Explorer, Console, Wizards, etc.) thanks to Eclipse RCP
+- GDL integrated console / command line support
+- Compile / Run script from menu and toolbar
+- Syntax coloring
 
 
 COMPILE:
 ========
 
-With the latest JDK (Java Development Kit, http://openjdk.java.net) installed,
-Type the following at the top source directory:
+With the JDK (Java Development Kit, http://openjdk.java.net) version equal or higher than 11
+installed, type the following at the top source directory:
 
-POSIX:
+```shell
+$ ./mvnw clean verify
+```
 
-$ bash gradlew build
-
-Windows:
-
-> gradlew.bat build
-
-Then the compiled binaries will be generated at gdlde/build/output.
-Be aware that if you execute wrong platform's one (e.g. running x86 IDE in x86-64 environment),
-then the IDE won't run properly.
+Then the compiled binaries will be generated at `product/target/products/gdlde.product/`.
 
 
 LICENSE:

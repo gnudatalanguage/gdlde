@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GDL Workbench
+Bundle-SymbolicName: gdlde;singleton:=true
+Bundle-Version: 0.0.1
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.equinox.event,
+ org.eclipse.jface.text,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.console,
+ org.eclipse.core.filesystem,
+ org.eclipse.core.resources,
+ org.apache.felix.scr
+Automatic-Module-Name: gdlde
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: gdlde

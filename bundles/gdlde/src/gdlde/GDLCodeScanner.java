@@ -3,8 +3,8 @@ package gdlde;
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.rules.*;
 import org.eclipse.swt.SWT;
-import org.eclipse.ui.IEditorReference;
-import org.eclipse.ui.PlatformUI;
+//import org.eclipse.ui.IEditorReference;
+//import org.eclipse.ui.PlatformUI;
 
 import java.io.*;
 import java.nio.file.Files;

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension point="org.eclipse.ui.startup">
+        <startup class="gdlde.GDLCommandLineArgsProcessor"/>
+    </extension>
+    <extension point="org.eclipse.ui.perspectives">
+        <perspective id="gdlde.gdlperspective" name="GDL" class="gdlde.GDLPerspective"/>
+    </extension>
+    <extension point="org.eclipse.ui.views">
+        <view id="GDLCommandView" name="Command Line" class="gdlde.GDLCommandView"/>
+    </extension>
+    <extension point="org.eclipse.ui.perspectiveExtensions">
+        <perspectiveExtension targetID="gdlde.gdlperspective">
+            <view id="GDLCommandView" relationship="bottom" relative="org.eclipse.ui.editorss" ratio="0.9" />
+
+            <view id="org.eclipse.ui.console.ConsoleView" relationship="bottom" relative="org.eclipse.ui.editorss" ratio="0.6" />
+            <view id="org.eclipse.ui.views.TaskList" relationship="stack" relative="org.eclipse.ui.console.ConsoleView" />
+            <view id="org.eclipse.ui.views.ProblemView" relationship="stack" relative="org.eclipse.ui.console.ConsoleView" />
+
+            <view id="org.eclipse.ui.views.BookmarkView" relationship="right" relative="org.eclipse.ui.console.ConsoleView" ratio="0.5" />
+
+            <view id="org.eclipse.ui.navigator.ProjectExplorer" relationship="left" relative="org.eclipse.ui.editorss" ratio="0.2" />
+            <view id="org.eclipse.ui.views.ContentOutline" relationship="stack" relative="org.eclipse.ui.navigator.ProjectExplorer" />
+
+            <viewShortcut id="GDLCommandView" />
+            <viewShortcut id="org.eclipse.ui.console.ConsoleView" />
+            <viewShortcut id="org.eclipse.ui.views.TaskList" />
+            <viewShortcut id="org.eclipse.ui.views.ProblemView" />
+            <viewShortcut id="org.eclipse.ui.views.BookmarkView" />
+            <viewShortcut id="org.eclipse.ui.navigator.ProjectExplorer" />
+            <viewShortcut id="org.eclipse.ui.views.ContentOutline" />
+
+            <newWizardShortcut id="org.eclipse.ui.wizards.new.folder" />
+            <newWizardShortcut id="org.eclipse.ui.wizards.new.file" />
+        </perspectiveExtension>
+    </extension>
+    <extension  point="org.eclipse.ui.editors">
+        <editor id="GDLEditor" extensions="pro" name="GDL Editor" class="gdlde.GDLEditor"
+                 contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor" />
+    </extension>
+    <!--
+    <extension point="org.eclipse.ui.newWizards">
+        <wizard name="New GDL Project" class="gdlde.GDLProjectWizard" id="GDLProjectWizard" />
+    </extension>
+    -->
+    <extension id="product" point="org.eclipse.core.runtime.products">
+        <product
+              application="org.eclipse.ui.ide.workbench"
+              name="GDL Workbench">
+           <property
+                 name="appName"
+                 value="GDL Workbench">
+           </property>
+           <property
+                 name="aboutText"
+                 value="GDL workbench">
+           </property>
+        </product>
+    </extension>
+    <extension point="org.eclipse.ui.commands">
+        <command id="cmdCompile" name="Compile" defaultHandler="gdlde.GDLCompileMenuHandler" />
+        <command id="cmdRun" name="Run" defaultHandler="gdlde.GDLRunMenuHandler" />
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=project">
+            <menu id="runMenu" label="Run">
+                <command commandId="cmdCompile"
+                        label="Compile"
+                        style="push"
+                        tooltip="Compile the current file">
+                </command>
+                <command commandId="cmdRun"
+                         label="Run"
+                         style="push"
+                         tooltip="Run the current procedure">
+                </command>
+            </menu>
+        </menuContribution>
+        <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar">
+            <toolbar id="runToolbar" label="Run">
+                <command commandId="cmdCompile"
+                         label="Compile"
+                         icon="icons/compile_16.png"
+                         style="push"
+                         tooltip="Compile the current file">
+                </command>
+                <command commandId="cmdRun"
+                         label="Run"
+                         icon="icons/run_16.png"
+                         style="push"
+                         tooltip="Run the current procedure">
+                </command>
+            </toolbar>
+        </menuContribution>
+    </extension>
+</plugin>
