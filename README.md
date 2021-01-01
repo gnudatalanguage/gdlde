@@ -1,10 +1,11 @@
 GDL Workbench - IDE for GNU Data Language
 =========================================
 
-An IDE for GDL (GNU Data Language). GDL is a free IDL (Interactive Data Language)
-compatible incremental compiler (capable of running programs written in IDL/GDL).
-IDL is a registered trademark of ITT Visual Information Solutions 
-(see: http://www.ittvis.com).
+An IDE for GDL (GNU Data Language), based on Eclipse RCP.
+
+GDL is a free IDL (Interactive Data Language) compatible incremental compiler (capable of
+running programs written in IDL/GDL). IDL is a registered trademark of ITT Visual Information
+Solutions (see: http://www.ittvis.com).
 
 
 HOMEPAGE
