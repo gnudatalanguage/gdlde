@@ -1,7 +1,17 @@
 language: java
-
 jdk:
   - openjdk11
-
+install: skip
 script:
-    - ./mvnw clean verify
+  - "./mvnw clean verify"
+deploy:
+  provider: releases
+  api-key:
+    secure: "BRZvoBRPk7x30/eeOdZilFOcPw1JMWvaaE/svv/D5oAcF4SRhpvu2vGcA1aYQ+GQhKcMnp5xPmjYEp3qUbug1qXDakmfvNIZ3T2OmA9aqNkJDBu132NGcVJPrqd4YXJgTAQZkatcaP9MKyxp5ZirqP6ETypzgYjqiVPLAXLTDK6uFSEdgzF/a59GM9cn6Lf4vbibMYT/5AKr3Pl5U1zstNZMMEMPuL3nUklw8kyWa8wTJuzqJZstPeVoAZ1o7a094B7wHj6WHDCR9w2jXWhvtGR/jK0pK7ay3vlMHzeQEzhShlqdBylueqpP0NlzDTruJIItvoiaRNtorKcNU4l/eMBx/wnO6p83W2h8vz5BJpDqJkf26BGgbYBCXopb4M90+vfjfkqi0ozRYpubI77u8QBdBFGkXJlU8qT0aPnI7+9YTE3zKHnv8XLWvyYWMEBzTABJ7bnd+4VF0rpx71B7mtEfe3ztfnnSJOer02bbtTHv4JVX2xEn0TtS0Mykm5p7PwUjcoTLUZhl4xlltRwgjMc5FM8l/yRzr7H46cPbDg73/Mi2+rl0pAR8ciXE+FFJAI6xVdypHOzBqnb5p3Xgy96iXsxHUF5qX1bYLS5iCae4+fBXA83SzaIgofAsnaSJNirpEz9euI6hhdHY4vp47Jk26tNJKSL5tsYem3vZ4tg="
+  file:
+    - "product/target/products/gdlde.product-linux.gtk.x86_64.zip"
+    - "product/target/products/gdlde.product-win32.win32.x86_64.zip"
+    - "product/target/products/gdlde.product-macosx.cocoa.x86_64.zip"
+  skip_cleanup: true
+  on:
+    tags: false
