@@ -45,17 +45,10 @@
     </extension>
     -->
     <extension id="product" point="org.eclipse.core.runtime.products">
-        <product
-              application="org.eclipse.ui.ide.workbench"
-              name="GDL Workbench">
-           <property
-                 name="appName"
-                 value="GDL Workbench">
-           </property>
-           <property
-                 name="aboutText"
-                 value="GDL workbench">
-           </property>
+        <product application="org.eclipse.ui.ide.workbench" name="GDL Workbench">
+           <property name="appName" value="GDL Workbench"/>
+           <property name="aboutText" value="GDL workbench"/>
+           <property name="preferenceCustomization" value="plugin_customization.ini"/>
         </product>
     </extension>
     <extension point="org.eclipse.ui.commands">
