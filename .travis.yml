@@ -14,4 +14,4 @@ deploy:
     - "product/target/products/gdlde.product-macosx.cocoa.x86_64.zip"
   skip_cleanup: true
   on:
-    tags: false
+    tags: true
