@@ -124,7 +124,7 @@ public class GDLCodeScanner extends RuleBasedScanner
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in));
                     String line;
                     String filename = f.getName();
-                    if (filename.substring(filename.length() - 4).equals(".pro")) {
+                    if (filename.length() > 4 && filename.substring(filename.length() - 4).equals(".pro")) {
                         while ((line = reader.readLine()) != null) {
                             if (line.length() >= 3 && line.substring(0, 3).toLowerCase().equals("pro"))
                             {
