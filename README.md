@@ -1,7 +1,7 @@
 GDL Workbench - IDE for GNU Data Language
 =========================================
 
-An IDE for GDL (GNU Data Language), requiring Eclipse IDE.
+An IDE for GDL (GNU Data Language), based on Eclipse RCP.
 
 ![A screenshot of GDL Workbench](./gdlde.png)
 
