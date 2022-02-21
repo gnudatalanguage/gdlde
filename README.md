@@ -1,7 +1,7 @@
 GDL Workbench - IDE for GNU Data Language
 =========================================
 
-An IDE for GDL (GNU Data Language), based on Eclipse RCP.
+An IDE for GDL (GNU Data Language), based on ![Eclipse Rich Client Platform (RCP)](https://wiki.eclipse.org/Rich_Client_Platform).
 
 ![A screenshot of GDL Workbench](./gdlde.png)
 
